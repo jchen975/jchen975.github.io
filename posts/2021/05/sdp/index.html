@@ -156,6 +156,10 @@
         transpose: ["{#1}^{\\mathsf{T}}", 1], 
         pinv: ["{#1}^{\\dagger}", 1],
 
+        deg: ["{\\mathrm{deg}(#1)}", 1],
+        indeg: ["{\\mathrm{indeg}(#1)}", 1],
+        outdeg: ["{\\mathrm{outdeg}(#1)}", 1], 
+
         zero: "\\mathbf{0}",
         one: "\\mathbf{1}"
       },
@@ -366,7 +370,7 @@
 \end{array} 
 \end{equation}\]
 
-<p>is in fact equivalent to \eqref{eq:sdp-lmi}, and we show how to establish this equivalence. We left the dimension of the new variable \(X\) vague on purpose for now, as the construction below will clarify it. Before we do this, let’s recall that the <em>trace</em> of a square matrix is defined as the sum of its diagonal elements, and is connected to the standard Frobenius inner product on \(\mathbb{R}^{m \times n}\) via</p>
+<p>is in fact equivalent to \eqref{eq:sdp-lmi}, and we show how to establish this equivalence by appropriately constructing the decision variable \(X\), and the coefficients \(C, A_k\), and \(b_k\). We leave the dimension of the new decision variable \(X\) vague on purpose for now, as the construction below will clarify it. Now, let us recall that the <em>trace</em> of a square matrix is defined as the sum of its diagonal elements, and is connected to the standard Frobenius inner product on \(\mathbb{R}^{m \times n}\) via</p>
 
 \[\trace(\transpose{X}Y) = \trace(X\transpose{Y}) = \langle X, Y \rangle = \sum_{i=1}^{m}\sum_{j=1}^n X_{ij}Y_{ij}.\]
 
@@ -443,9 +447,9 @@ Analogous to the decomposition of \(x\), we can decompose the cost vector \(c\) 
 
 <p>trace equality constraints of the form \(\trace(A_kX) = b_k\), in which the new coefficient matrices \(A_k\) correspond to \(\tilde{F}_{j\ell}\) and \(\tilde{G}_i\) constructed in \eqref{eq:F-tilde} and \eqref{eq:G-tilde}, respectively, while the coefficients \(b_k\) correspond to \(-(F_0)_{j\ell}\) and \(h_i\), respectively.</p>
 
-<p><br />
-Further readings and references
-—–</p>
+<p><br /></p>
+
+<h2 id="further-readings-and-references">Further readings and references</h2>
 <ol>
   <li>General introduction and basic examples of SDPs: Chapter 4.6.2 of <a href="https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf">Convex Optimization</a></li>
   <li><a href="https://doi.org/10.1137/1038003">SIAM survey</a> of SDPs and numerical solution methods</li>
@@ -453,7 +457,7 @@ Further readings and references
   <li>Further trace properties and generalizations: Chapter 8.D of <a href="https://linear.axler.net/LADR4e.pdf">Linear Algebra Done Right</a></li>
 </ol>
 
-<p><em>Last updated: 2025-07-21 22:40 EST</em></p>
+<p><em>Last updated: 2025-07-22 15:32 EST</em></p>
 
 
         
@@ -515,12 +519,76 @@ Further readings and references
       
 
 
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
+      <a href="https://ljchen.ca/posts/2025/08/geo-series-fixed-point-1/" class="pagination--pager" title="From geometric series to fixed-point iterations and their applications: Part I
+">Next</a>
+    
+  </nav>
+
     </div>
 
     
   </article>
 
   
+  
+    <div class="page__related">
+      
+        <h4 class="page__related-title">You May Also Enjoy</h4>
+      
+      <div class="grid__wrapper">
+        
+          
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://ljchen.ca/posts/2025/08/geo-series-fixed-point-1/" rel="permalink">From geometric series to fixed-point iterations and their applications: Part I
+</a>
+      
+    </h2>
+    
+    
+      <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> 
+
+
+  
+	  1 minute read
+	
+</p>
+    
+
+        
+         <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2025-08-21T00:00:00+00:00">August 21, 2025</time></p>
+        
+
+    
+    <p class="archive__item-excerpt" itemprop="description"><p>Part I of a three-part note on how the common existence and uniqueness results in ODEs and MDPs boil down to the Banach fixed-point theorem, which itself is based on the simple geometric series.</p>
+
+</p>
+    
+    
+    
+
+    
+
+  </article>
+</div>
+
+        
+      </div>
+    </div>
   
 </div>
 
@@ -551,7 +619,7 @@ Further readings and references
 
 <div class="page__footer-copyright">
   &copy; 2025 Liangjie (Jeffrey) Chen, Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br />
-  Site last updated 2025-07-22
+  Site last updated 2025-08-22
 </div>
 
       </footer>
