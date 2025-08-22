@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://ljchen.ca/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ljchen.ca/" rel="alternate" type="text/html" /><updated>2025-08-22T17:12:15+00:00</updated><id>https://ljchen.ca/feed.xml</id><title type="html">Homepage</title><subtitle>personal description</subtitle><author><name>Liangjie (Jeffrey) Chen</name></author><entry><title type="html">From geometric series to fixed-point iterations and their applications: Part II</title><link href="https://ljchen.ca/posts/2025/08/geo-series-fixed-point-2/" rel="alternate" type="text/html" title="From geometric series to fixed-point iterations and their applications: Part II" /><published>2025-08-21T00:00:00+00:00</published><updated>2025-08-21T00:00:00+00:00</updated><id>https://ljchen.ca/posts/2025/08/geo-series-fixed-point%20-2</id><content type="html" xml:base="https://ljchen.ca/posts/2025/08/geo-series-fixed-point-2/"><![CDATA[<p>Part II of a three-part note on how the common existence and uniqueness results in ODEs and MDPs boil down to the Banach fixed-point theorem, which itself is based on the simple geometric series.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://ljchen.ca/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ljchen.ca/" rel="alternate" type="text/html" /><updated>2025-08-22T18:44:07+00:00</updated><id>https://ljchen.ca/feed.xml</id><title type="html">Homepage</title><subtitle>personal description</subtitle><author><name>Liangjie (Jeffrey) Chen</name></author><entry><title type="html">From geometric series to fixed-point iterations and their applications: Part II</title><link href="https://ljchen.ca/posts/2025/08/geo-series-fixed-point-2/" rel="alternate" type="text/html" title="From geometric series to fixed-point iterations and their applications: Part II" /><published>2025-08-21T00:00:00+00:00</published><updated>2025-08-21T00:00:00+00:00</updated><id>https://ljchen.ca/posts/2025/08/geo-series-fixed-point%20-2</id><content type="html" xml:base="https://ljchen.ca/posts/2025/08/geo-series-fixed-point-2/"><![CDATA[<p>Part II of a three-part note on how the common existence and uniqueness results in ODEs and MDPs boil down to the Banach fixed-point theorem, which itself is based on the simple geometric series.</p>
 
 <p><em>Acknowledgement: the content of this post, in particular the Banach fixed-point theorem and its proof is based on Prof. Keith Conrad’s <a href="https://kconrad.math.uconn.edu/blurbs/analysis/contraction.pdf">note</a>.</em></p>
 
@@ -28,17 +28,23 @@
     k + ka + ka^2 + \dots = \sum_{i = 0}^{\infty} ka^i, 
 \end{equation}\]
 
-<p>is a geometric series with a common ratio \(a\). If \(a &lt; 1\), it is called the “decay rate” and the series converges to \(\frac{k}{1-a}\). One important extension of this idea is the power series, where the leading coefficient \(k\) is no longer uniform, but instead itself forms a sequence, i.e., 
-\(k_0 + k_1 a + k_2 a^2 + \dots = \sum_{i = 0}^{\infty} k_i a^i,\)
-which is important and a powerful tool in its own right, e.g., in the context of analysis. To stay focused on the purpose of this note, we instead look at the extension into geometric series of a <em>linear operator</em> \(T: V \goesto V\), where we take \(V\) to be a complete, finite-dimensional, normed vector space. The standard \(n\)-dimensional Euclidean space \(\mathbb{R}^n\) is one such example. We begin by taking \(k = 1\) and \(a &lt; 1\) in \eqref{eq:geo-series-real}, which along with the convergence result stated previously, becomes 
-\(\begin{equation}\label{eq:geo-series-real-1}
+<p>is a geometric series with a common ratio \(a\). If \(a &lt; 1\), it is called the “decay rate” and the series converges to \(\frac{k}{1-a}\). One important extension of this idea is the power series, where the leading coefficient \(k\) is no longer uniform, but instead itself forms a sequence, i.e.,</p>
+
+\[k_0 + k_1 a + k_2 a^2 + \dots = \sum_{i = 0}^{\infty} k_i a^i,\]
+
+<p>which is important and a powerful tool in its own right, e.g., in the context of analysis. To stay focused on the purpose of this note, we instead look at the extension into geometric series of a <em>linear operator</em> \(T: V \goesto V\), where we take \(V\) to be a complete, finite-dimensional, normed vector space. The standard \(n\)-dimensional Euclidean space \(\mathbb{R}^n\) is one such example. We begin by taking \(k = 1\) and \(a &lt; 1\) in \eqref{eq:geo-series-real}, which along with the convergence result stated previously, becomes</p>
+
+\[\begin{equation}\label{eq:geo-series-real-1}
     \sum_{i = 0}^{\infty} a^i = (1-a)^{-1}.
-\end{equation}\)
-With the linear operator \(T: V \goesto V\), we can define the <em>Neumann series</em>: 
-\(\begin{equation}\label{eq:neumann-series}
+\end{equation}\]
+
+<p>With the linear operator \(T: V \goesto V\), we can define the <em>Neumann series</em>:</p>
+
+\[\begin{equation}\label{eq:neumann-series}
     \sum_{i = 0}^{\infty} T^i,
-\end{equation}\)
-which is a series of <em>repeated application</em> of the operator \(T\). 
+\end{equation}\]
+
+<p>which is a series of <em>repeated application</em> of the operator \(T\). 
 <!-- To make this notion concrete, let us 
 see 
 how the gradient descent algorithm on an objective function \\(f : \mathbb{R} \goesot \mathbb{R}\\) might fit into this framework. Let \\(x_0 \inR\\) be some fixed initial condition, then we get 
@@ -55,19 +61,27 @@ $$
 $$
 and the step size \\(\eta\\) to ensure algorithm convergence can be naturally obtained via the geometric series convergence criterion.   -->
 <!-- Back to the general Neumann series \eqref{eq:neumann-series}.  -->
-Ideally, the series converges, but what’s more, it would be nice to arrive at an analogous result to \eqref{eq:geo-series-real-1}. That is, we need to answer the following question: under what condition on \(T\) do we have \eqref{eq:neumann-series-conv}? 
-\(\begin{equation}\label{eq:neumann-series-conv}
-    \sum_{i = 0}^{\infty} T^i =(I-T)^{-1}
-\end{equation}\) 
-The answer is, when the operator norm of \(T\), denoted by \(\Vert T \Vert\), satisfies \(\Vert T \Vert &lt; 1\). This condition is clearly analogous to the convergence criterion of geometric series, \(\vert a \vert &lt; 1 \). The Neumann series has important applications in the topic of <em>resolvent analysis</em>, a topic in complex analysis with deep connections to linear algebra, and by extension, classical control theory topics such as the frequency response of a linear time-invariant system. An excellent treatment on this topic is given in the reference section at the end. This extension from the (scalar) geometric series to the (vector/operator) Neumann series will be examined further in Part II, where we introduce the Banach fixed-point theorem and its proof.</p>
+Ideally, the series converges, but what’s more, it would be nice to arrive at an analogous result to \eqref{eq:geo-series-real-1}. That is, we need to answer the following question: under what condition on \(T\) do we have \eqref{eq:neumann-series-conv}?</p>
 
-<p>In addition, since we are only working with finite-dimensional vector spaces, it is natural to consider the square matrix \(A\), which is the matrix representation of operator \(T\) in the (canonical) basis. The ties to linear algebra now becomes evident: if the induced matrix norm of \(A\), denoted by \(\Vert A \Vert\), satisfies \(\Vert A \Vert &lt; 1\), we can then write 
-\(\sum_{i = 0}^{\infty} A^i =(I-A)^{-1},\) 
-which is a series of matrix powers. Thus, when the series converges, a natural application of this result is in matrix inversion computation: let \(B \define I - A\), and suppose that \(\Vert I - B\Vert &lt; 1\). Then, to compute the inverse \(B^{-1}\), we can write 
-\(B^{-1} = (I - A)^{-1} = \sum_{i = 0}^{\infty} A^i = \sum_{i = 0}^{\infty} (I-B)^i.\) 
-In practice, we may truncate the series after sufficiently large number of terms. In addition, a common trick used in computing the inverse of a sum of two matrices, \((A + B)^{-1}\), when one of them is invertible, is as follows: suppose that \(A\) is invertible and \(\Vert BA \Vert &lt; 1\), then 
-\((A + B)^{-1} = ((I + BA)A)^{-1} = A^{-1}(I + BA)^{-1} = A^{-1} \sum_{i=0}^{\infty} (-BA)^{i},\)
-which is a particularly useful formula in cases of \(B\) being a small perturbation to the “nominal” \(A\).</p>
+\[\begin{equation}\label{eq:neumann-series-conv}
+    \sum_{i = 0}^{\infty} T^i =(I-T)^{-1}
+\end{equation}\]
+
+<p>The answer is, when the operator norm of \(T\), denoted by \(\Vert T \Vert\), satisfies \(\Vert T \Vert &lt; 1\). This condition is clearly analogous to the convergence criterion of geometric series, \(\vert a \vert &lt; 1 \). The Neumann series has important applications in the topic of <em>resolvent analysis</em>, a topic in complex analysis with deep connections to linear algebra, and by extension, classical control theory topics such as the frequency response of a linear time-invariant system. An excellent treatment on this topic is given in the reference section at the end. This extension from the (scalar) geometric series to the (vector/operator) Neumann series will be examined further in Part II, where we introduce the Banach fixed-point theorem and its proof.</p>
+
+<p>In addition, since we are only working with finite-dimensional vector spaces, it is natural to consider the square matrix \(A\), which is the matrix representation of operator \(T\) in the (canonical) basis. The ties to linear algebra now becomes evident: if the induced matrix norm of \(A\), denoted by \(\Vert A \Vert\), satisfies \(\Vert A \Vert &lt; 1\), we can then write</p>
+
+\[\sum_{i = 0}^{\infty} A^i =(I-A)^{-1},\]
+
+<p>which is a series of matrix powers. Thus, when the series converges, a natural application of this result is in matrix inversion computation: let \(B \define I - A\), and suppose that \(\Vert I - B\Vert &lt; 1\). Then, to compute the inverse \(B^{-1}\), we can write</p>
+
+\[B^{-1} = (I - A)^{-1} = \sum_{i = 0}^{\infty} A^i = \sum_{i = 0}^{\infty} (I-B)^i.\]
+
+<p>In practice, we may truncate the series after sufficiently large number of terms. In addition, a common trick used in computing the inverse of a sum of two matrices, \((A + B)^{-1}\), when one of them is invertible, is as follows: suppose that \(A\) is invertible and \(\Vert BA \Vert &lt; 1\), then</p>
+
+\[(A + B)^{-1} = ((I + BA)A)^{-1} = A^{-1}(I + BA)^{-1} = A^{-1} \sum_{i=0}^{\infty} (-BA)^{i},\]
+
+<p>which is a particularly useful formula in cases of \(B\) being a small perturbation to the “nominal” \(A\).</p>
 
 <p>To conclude this very brief note, we can see that the geometric series is much more than a tool to calculate compound interest in high school, and can in fact be generalized to other mathematical objects. In the next part, we will explore how it is used in the study of fixed-point iterations, which is ubiquitous in algorithm development and convergence analysis. We will then prove the Banach fixed-point theorem, which is an extremely simple yet profound result.</p>
 
