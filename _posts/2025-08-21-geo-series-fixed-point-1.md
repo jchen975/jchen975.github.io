@@ -28,7 +28,7 @@ $$
     k_0 + k_1 a + k_2 a^2 + \dots = \sum_{i = 0}^{\infty} k_i a^i, 
 $$
 
-which is important and a powerful tool in its own right, e.g., in the context of analysis. To stay focused on the purpose of this note, we instead look at the extension into geometric series of a _linear operator_ \\(T: V \goesto V\\), where we take \\(V\\) to be a complete, finite-dimensional, normed vector space. The standard \\(n\\)-dimensional Euclidean space \\(\mathbb{R}^n\\) is one such example. We begin by taking \\(k = 1\\) and \\(a < 1\\) in \eqref{eq:geo-series-real}, which along with the convergence result stated previously, becomes 
+which is important and a powerful tool in its own right, e.g., in the context of analysis. To stay focused on the purpose of this note, we instead look at the extension into geometric series of a _linear operator_ \\(T: V \goesto V\\), where we take \\(V\\) to be a [complete](https://en.wikipedia.org/wiki/Cauchy_sequence#Completeness), [finite-dimensional](https://en.wikipedia.org/wiki/Dimension_(vector_space)), [normed vector space](https://en.wikipedia.org/wiki/Normed_vector_space), also known as a _Banach space_. The standard \\(n\\)-dimensional Euclidean space \\(\mathbb{R}^n\\) is one such example. We begin by taking \\(k = 1\\) and \\(a < 1\\) in \eqref{eq:geo-series-real}, which along with the convergence result stated previously, becomes 
 
 $$
 \begin{equation}\label{eq:geo-series-real-1}
@@ -94,10 +94,7 @@ which is a particularly useful formula in cases of \\(B\\) being a small perturb
 
 To conclude this very brief note, we can see that the geometric series is much more than a tool to calculate compound interest in high school, and can in fact be generalized to other mathematical objects. In the next part, we will explore how it is used in the study of fixed-point iterations, which is ubiquitous in algorithm development and convergence analysis. We will then prove the Banach fixed-point theorem, which is an extremely simple yet profound result.  
 
-
-
-<!-- _Acknowledgement:  -->
-
+ 
 <br> 
 
 Further readings and references
