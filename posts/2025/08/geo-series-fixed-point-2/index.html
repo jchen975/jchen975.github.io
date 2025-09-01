@@ -28,7 +28,7 @@
 
 
 
-  <meta property="article:published_time" content="2025-08-21T00:00:00+00:00">
+  <meta property="article:published_time" content="2025-08-22T00:00:00+00:00">
 
 
 
@@ -312,7 +312,7 @@
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
     <meta itemprop="headline" content="From geometric series to fixed-point iterations and their applications: Part II">
     <meta itemprop="description" content="Part II of a three-part note on how the common existence and uniqueness results in ODEs and MDPs boil down to the Banach fixed-point theorem, which itself is based on the simple geometric series.">
-    <meta itemprop="datePublished" content="August 21, 2025">
+    <meta itemprop="datePublished" content="August 22, 2025">
     
 
     <div class="page__inner-wrap">
@@ -332,7 +332,7 @@
         
         
         
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2025-08-21T00:00:00+00:00">August 21, 2025</time></p>
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2025-08-22T00:00:00+00:00">August 22, 2025</time></p>
             
         </header>
       
@@ -430,18 +430,26 @@ All such iterative algorithms aims to stop at some desired point, which dependin
 
 <p>i.e., \(f\) is not only continuous but uniformly continuous, and the proof is complete. \(\tag{\square}\)</p>
 
-<p>We make two remarks about the Banach fixed point theorem. First, any map \(T\) that satisfies \eqref{eq:contraction} is called a <em>contraction</em> (thus the alternative name of the theorem, “contraction mapping theorem”), and the constant \(c\) is called the <em>contraction constant</em>. A contraction is by definition a Lipschitz continuous function with Lipschitz constant strictly less than 1. Second, the requirement that \(T\) maps a complete metric space \(M\) to itself can be restricted to a closed invariant subset of \(M\) under \(T\). That is, let \(T\) be a contraction on \(M\), and suppose that \(\mathcal{S} \subseteq M\) is a closed set with respect to the metric topology such that \(T(\mathcal{S}) \subseteq \mathcal{S}\), then the map \(T\vert_{\mathcal{S}}: \mathcal{S} \goesto \mathcal{S}\) is a contraction since \(\mathcal{S}\) contains all of its limit points, and thus, the fixed point \(x^{\star}\) as well.</p>
+<p>As we can see, while the Banach fixed-point theorem relies on certain “niceness” properties of the metric space and knowledge of \(\epsilon\)-\(\delta\) definition of continuity, at its core it utilizes the geometric series identity to obtain the final bound on the iterations, and thereby the fixed point itself.</p>
+
+<p>We make two additional remarks about the Banach fixed point theorem. First, any map \(T\) that satisfies \eqref{eq:contraction} is called a <em>contraction</em> (thus the alternative name of the theorem, “contraction mapping theorem”), and the constant \(c\) is called the <em>contraction constant</em>. A contraction is by definition a Lipschitz continuous function with Lipschitz constant strictly less than 1. Second, the requirement that \(T\) maps a complete metric space \(M\) to itself can be restricted to a closed invariant subset of \(M\) under \(T\). That is, let \(T\) be a contraction on \(M\), and suppose that \(\mathcal{S} \subseteq M\) is a closed set with respect to the metric topology such that \(T(\mathcal{S}) \subseteq \mathcal{S}\), then the map \(T\vert_{\mathcal{S}}: \mathcal{S} \goesto \mathcal{S}\) is a contraction since \(\mathcal{S}\) contains all of its limit points, and thus, the fixed point \(x^{\star}\) as well.</p>
 
 <!-- The last part of this note is a little more application-oriented, and we give a sufficient condition for a differentiable map in \\(\mathbb{R}^n\\) to be a contraction.  -->
+
+<p><strong>TO BE COMPLETED</strong></p>
 
 <h2 id="conclusion">Conclusion</h2>
 
 <p><br /></p>
 
-<!-- Further readings and references -->
-<!-- ----- -->
+<p>Further readings and references</p>
+<ol>
+  <li>Keith Conrad’s expository papers on Banach fixed-point theorm <a href="https://kconrad.math.uconn.edu/blurbs/analysis/contraction.pdf">Part 1</a> <a href="https://kconrad.math.uconn.edu/blurbs/analysis/contraction2.pdf">Part 2</a></li>
+  <li><a href="https://terpconnect.umd.edu/%7Epetersd/666/fixedpoint.pdf">Banach fixed-point theorem in \(\mathbb{R}^n\)</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Metric_space">Metric space</a></li>
+</ol>
 
-<p><em>Last updated: 2025-08-22 12:56 EST</em></p>
+<p><em>Last updated: 2025-09-01 5:02 EST</em></p>
 
 
         
@@ -505,12 +513,11 @@ All such iterative algorithms aims to stop at some desired point, which dependin
 
   <nav class="pagination">
     
-      <a href="https://ljchen.ca/posts/2021/05/sdp/" class="pagination--pager" title="Equivalent formulations of semidefinite programs using linear matrix inequality and trace
+      <a href="https://ljchen.ca/posts/2025/08/geo-series-fixed-point-1/" class="pagination--pager" title="From geometric series to fixed-point iterations and their applications: Part I
 ">Previous</a>
     
     
-      <a href="https://ljchen.ca/posts/2025/08/geo-series-fixed-point-1/" class="pagination--pager" title="From geometric series to fixed-point iterations and their applications: Part I
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -549,7 +556,7 @@ All such iterative algorithms aims to stop at some desired point, which dependin
 
 
   
-	  1 minute read
+	  5 minute read
 	
 </p>
     
