@@ -1,6 +1,6 @@
 ---
 title: 'From geometric series to fixed-point iterations and their applications: Part II'
-date: 2025-08-21  
+date: 2025-08-22  
 permalink: /posts/2025/08/geo-series-fixed-point-2/
 tags:
   - math
@@ -124,10 +124,14 @@ $$
 
 i.e., \\(f\\) is not only continuous but uniformly continuous, and the proof is complete. \\(\tag{\square}\\) 
 
-We make two remarks about the Banach fixed point theorem. First, any map \\(T\\) that satisfies \eqref{eq:contraction} is called a _contraction_ (thus the alternative name of the theorem, "contraction mapping theorem"), and the constant \\(c\\) is called the _contraction constant_. A contraction is by definition a Lipschitz continuous function with Lipschitz constant strictly less than 1. Second, the requirement that \\(T\\) maps a complete metric space \\(M\\) to itself can be restricted to a closed invariant subset of \\(M\\) under \\(T\\). That is, let \\(T\\) be a contraction on \\(M\\), and suppose that \\(\mathcal{S} \subseteq M\\) is a closed set with respect to the metric topology such that \\(T(\mathcal{S}) \subseteq \mathcal{S}\\), then the map \\(T\vert_{\mathcal{S}}: \mathcal{S} \goesto \mathcal{S}\\) is a contraction since \\(\mathcal{S}\\) contains all of its limit points, and thus, the fixed point \\(x^{\star}\\) as well. 
+As we can see, while the Banach fixed-point theorem relies on certain "niceness" properties of the metric space and knowledge of \\(\epsilon\\)-\\(\delta\\) definition of continuity, at its core it utilizes the geometric series identity to obtain the final bound on the iterations, and thereby the fixed point itself. 
+
+We make two additional remarks about the Banach fixed point theorem. First, any map \\(T\\) that satisfies \eqref{eq:contraction} is called a _contraction_ (thus the alternative name of the theorem, "contraction mapping theorem"), and the constant \\(c\\) is called the _contraction constant_. A contraction is by definition a Lipschitz continuous function with Lipschitz constant strictly less than 1. Second, the requirement that \\(T\\) maps a complete metric space \\(M\\) to itself can be restricted to a closed invariant subset of \\(M\\) under \\(T\\). That is, let \\(T\\) be a contraction on \\(M\\), and suppose that \\(\mathcal{S} \subseteq M\\) is a closed set with respect to the metric topology such that \\(T(\mathcal{S}) \subseteq \mathcal{S}\\), then the map \\(T\vert_{\mathcal{S}}: \mathcal{S} \goesto \mathcal{S}\\) is a contraction since \\(\mathcal{S}\\) contains all of its limit points, and thus, the fixed point \\(x^{\star}\\) as well. 
 
 
 <!-- The last part of this note is a little more application-oriented, and we give a sufficient condition for a differentiable map in \\(\mathbb{R}^n\\) to be a contraction.  -->
+
+**TO BE COMPLETED** 
 
 
 Conclusion
@@ -137,7 +141,9 @@ Conclusion
 
 <br> 
 
-<!-- Further readings and references -->
-<!-- ----- -->
+Further readings and references
+1. Keith Conrad's expository papers on Banach fixed-point theorm [Part 1](https://kconrad.math.uconn.edu/blurbs/analysis/contraction.pdf) [Part 2](https://kconrad.math.uconn.edu/blurbs/analysis/contraction2.pdf)
+2. [Banach fixed-point theorem in \\(\mathbb{R}^n\\)](https://terpconnect.umd.edu/%7Epetersd/666/fixedpoint.pdf)
+3. [Metric space](https://en.wikipedia.org/wiki/Metric_space)
 
-_Last updated: 2025-08-22 12:56 EST_
+_Last updated: 2025-09-01 5:02 EST_
