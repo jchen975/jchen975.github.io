@@ -70,7 +70,7 @@ Formally, let us consider a complete metric space \\((M,d)\\), and we want to an
 
 The answers to these questions lie in the the _Banach fixed point theorem_ stated below. 
 
-**Theorem** (Banach fixed-point theorem). _Suppose that there exists some positive constant \\(c < 1\\) such that, for every \\(\,x, y \in M\\), the map \\(T\\) satisfies_
+**Theorem** (Banach fixed-point theorem). _Suppose that there exists some positive constant \\(c < 1\\) such that, for every \\(\,x, y \in M\\), the map \\(\,T\\) satisfies_
 
 $$
 \begin{equation}\label{eq:contraction}
@@ -78,7 +78,7 @@ $$
 \end{equation}
 $$
 
-Then, there exists a unique fixed point \\(\,x^{\star}\\) of \\(\,T\\) in \\(M\\), and every sequence_ \\(\{x\_n\}\_{n \inZ\_{\geq 0}}\\) _such that \\(\,x\_n \in M\\) converges to \\(x^{\star}\\)._
+_Then, there exists a unique fixed point \\(\,x^{\star}\\) of \\(\,T\\) in \\(\,M\\), and every sequence \\(\\{x\_n\\}\_{n \inZ\_{\geq 0}}\\) such that \\(\,x\_n \in M\\) converges to \\(x^{\star}\\)._
 
 
 _Proof_. We prove the theorem in several steps. First, we show that if \\(f\\) has a fixed point, then it must be unique. Assume towards contradiction that both \\(x, \tilde{x}\in M\\) are both fixed points of \\(f\\), but \\(x \neq \tilde{x}\\). Then, since \\(x = f(x)\\)  and \\(\tilde{x} = f(\tilde{x})\\), we must have 
@@ -87,7 +87,7 @@ $$
     d(x, \tilde{x}) = d(f(x), f(\tilde{x})) \leq cd(x, \tilde{x}) < d(x, \tilde{x}),
 $$
 
-which is a contradiction. Next, we show that the sequence \\(\{x\_n\}_{n \inZ\_{\geq 0}}\\) is Cauchy; in particular, since \\(M\\) is complete, it converges to a point in \\(M\\). By construction, we have 
+which is a contradiction. Next, we show that the sequence \\(\\{x\_n\\}_{n \inZ\_{\geq 0}}\\) is Cauchy; in particular, since \\(M\\) is complete, it converges to a point in \\(M\\). By construction, we have 
 
 $$
 d(x_n, x_{n+1}) \leq cd(x_{n-1}, x_n) \leq c^2d(x_{n-2}, x_{n-1}) \leq \cdots \leq c^n(x_0, x_1)
@@ -122,7 +122,7 @@ $$
     d(x, y) < \delta \implies d(f(x), f(y)) \leq cd(x,y) < c\delta = \epsilon,
 $$
 
-i.e., \\(f\\) is not only continuous but uniformly continuous, and the proof is complete. \\(\tag{\square}\\) 
+i.e., \\(f\\) is not only continuous but uniformly continuous, and the proof is complete. \\(\qquad\square\\) 
 
 As we can see, while the Banach fixed-point theorem relies on certain "niceness" properties of the metric space and knowledge of \\(\epsilon\\)-\\(\delta\\) definition of continuity, at its core it utilizes the geometric series identity to obtain the final bound on the iterations, and thereby the fixed point itself. 
 
@@ -142,6 +142,8 @@ Conclusion
 <br> 
 
 Further readings and references
+-----
+
 1. Keith Conrad's expository papers on Banach fixed-point theorm [Part 1](https://kconrad.math.uconn.edu/blurbs/analysis/contraction.pdf) [Part 2](https://kconrad.math.uconn.edu/blurbs/analysis/contraction2.pdf)
 2. [Banach fixed-point theorem in \\(\mathbb{R}^n\\)](https://terpconnect.umd.edu/%7Epetersd/666/fixedpoint.pdf)
 3. [Metric space](https://en.wikipedia.org/wiki/Metric_space)
