@@ -15,7 +15,7 @@ In Part I of this three-part note, we saw how the geometric series is extended b
 
 Iterative algorithms and fixed-points
 -----
-We consider a sequence of points, say \\(\{x_n\}_{n=0}^{\infty} \subseteq \mathbb{R}^n\\), whose elements are recursively defined by 
+We consider a sequence of points, say \\(\\{x_n\\}_{n=0}^{\infty} \subseteq \mathbb{R}^n\\), whose elements are recursively defined by 
 
 $$
 \begin{equation}\label{eq:iterations}
@@ -23,7 +23,7 @@ $$
 \end{equation}
 $$
 
-where \\(T : \mathbb{R}^n \goesto \mathbb{R}^n\\) is some fixed function. We may think of the elements in this sequence as _iterations_ of applying the function \\(T\\), since unrolling the recursion we would obtain \\(x_{n} = T^{n}(x_0)\\) for all \\(n \inZ_{\geq 0}\\). Common examples of this recursion scheme include (1) the Newton's method to find a root of some differentiable function \\(f : \mathbb{R} \goesto \mathbb{R}^n\\), which defines the iterations as  
+where \\(T : \mathbb{R}^n \goesto \mathbb{R}^n\\) is some fixed function. We may think of the elements in this sequence as _iterations_ of applying the function \\(T\\), since unrolling the recursion we would obtain \\(x\_{n} = T^{n}(x\_0)\\) for all \\(n \inZ_{\geq 0}\\). Common examples of this recursion scheme include (1) the Newton's method to find a root of some differentiable function \\(f : \mathbb{R} \goesto \mathbb{R}^n\\), which defines the iterations as  
 
 $$
 \begin{equation}\label{eq:newton}
@@ -41,7 +41,7 @@ $$
 $$
 
 where \\(\eta\\) is the step size, and \\(\nabla f\\) is the gradient of \\(f\\). 
-All such iterative algorithms aims to stop at some desired point, which depending on the purpose, can be root of a function (as in Newton's method) or local minimum (as in gradient descent), or even global minimum/maximum. One common definition that can tie these points together, is the notion of _fixed point_. For our purposes, given a function \\(T : V \goesto V\\) with \\(V\\) being a vector space, \\(x \in V\\) is a fixed point of \\(T\\) if \\(T(x) = x\\). Thus, we can interpret the Newton step \eqref{eq:newton} by defining the map 
+All such iterative algorithms aims to stop at some desired point, which depending on the purpose, can be root of a function (as in Newton's method) or local minimum (as in gradient descent), or even global minimum/maximum. One common definition that can tie these points together, is the notion of _fixed point_. For our purposes, given a function \\(T : V \goesto V\\) with \\(V\\) being a set, \\(x \in V\\) is a fixed point of \\(T\\) if \\(T(x) = x\\). Thus, we can interpret the Newton step \eqref{eq:newton} by defining the map 
 
 $$
     T(x) = x - \frac{f(x)}{f'(x)}. 
@@ -64,21 +64,21 @@ The fixed-point theorem that we focus on in this note is called the _Banach fixe
 <!-- Formally, let us consider a Banach space (_Note: generally, we work with a "metric space", which is a set equipped with a "distance measure" called "metric", and norms in a Banach space are metrics_), and we want to answer the following questions about a function \\(f : V \goesto V\\), in the following order: -->
 Formally, let us consider a complete metric space \\((M,d)\\), and we want to answer the following questions about a function \\(T : M \goesto M\\), in the following order: 
 
-    1. When does \\(T\\) have a fixed point? 
-    2. When is a fixed point \\(x^{\star}\\) of \\(T\\) unique? 
-    3. How to compute/find the unique fixed point \\(x^{\star}\\)? 
+1. When does \\(T\\) have a fixed point? 
+2. When is a fixed point \\(x^{\star}\\) of \\(T\\) unique? 
+3. How to compute/find the unique fixed point \\(x^{\star}\\)? 
 
 The answers to these questions lie in the the _Banach fixed point theorem_ stated below. 
 
-**Theorem** (Banach fixed-point theorem). _Suppose that for every \\(x, y \in M\\), the map \\(T\\) satisfies_
+**Theorem** (Banach fixed-point theorem). _Suppose that there exists some positive constant \\(c < 1\\) such that, for every \\(\,x, y \in M\\), the map \\(T\\) satisfies_
 
 $$
 \begin{equation}\label{eq:contraction}
-    d(T(x), T(y)) \leq c d(x,y),
+    d(T(x), T(y)) \leq c d(x,y)
 \end{equation}
 $$
 
-_for some constant \\(c \in [0,1)\\). Then, there exists a unique fixed point \\(x^{\star}\\) of \\(T\\) in \\(M\\), and every sequence_ \\(\{x_n\}\_{n \in \mathbb{Z}\_{\geq 0}}\\) _such that \\(x\_n \in M\\) converges to \\(x^{\star}\\)._
+Then, there exists a unique fixed point \\(\,x^{\star}\\) of \\(\,T\\) in \\(M\\), and every sequence_ \\(\{x\_n\}\_{n \inZ\_{\geq 0}}\\) _such that \\(\,x\_n \in M\\) converges to \\(x^{\star}\\)._
 
 
 _Proof_. We prove the theorem in several steps. First, we show that if \\(f\\) has a fixed point, then it must be unique. Assume towards contradiction that both \\(x, \tilde{x}\in M\\) are both fixed points of \\(f\\), but \\(x \neq \tilde{x}\\). Then, since \\(x = f(x)\\)  and \\(\tilde{x} = f(\tilde{x})\\), we must have 
@@ -87,20 +87,18 @@ $$
     d(x, \tilde{x}) = d(f(x), f(\tilde{x})) \leq cd(x, \tilde{x}) < d(x, \tilde{x}),
 $$
 
-which is a contradiction. Next, we show that the sequence \\(\{x_n\}_{n \in \mathbb{Z}_{\geq 0}}\\) is Cauchy; in particular, since \\(M\\) is complete, it converges to a point in \\(M\\). By construction, we have 
+which is a contradiction. Next, we show that the sequence \\(\{x\_n\}_{n \inZ\_{\geq 0}}\\) is Cauchy; in particular, since \\(M\\) is complete, it converges to a point in \\(M\\). By construction, we have 
 
 $$
 d(x_n, x_{n+1}) \leq cd(x_{n-1}, x_n) \leq c^2d(x_{n-2}, x_{n-1}) \leq \cdots \leq c^n(x_0, x_1)
 $$
 
-for \\(n = 1,2,...$. For any \\(m \in \mathbb{Z}\\) such that \\(m > n\\), since the metric \\(d\\) satisfies the triangle inequality, by the geometric series formula we also have 
+for \\(n = 1,2,...\\). For any \\(m \inZ\\) such that \\(m > n\\), since the metric \\(d\\) satisfies the triangle inequality, by the geometric series formula we also have 
 
 $$
 \begin{align*}
-    d(x_n, x_m) &\leq d(x_n, x_{n+1}) +  d(x_{n+1}, x_{n+2}) +  \cdots + d(x_{m-1}, x_m) \\
-                &\leq c^n d(x_0, x_1) + \cdots + c^{m-1}d(x_0, x_1) \\
-                &= \sum_{i=n}^{m-1} c^i d(x_0, x_1) \\
-                &\leq \left(\sum_{i=0}^{\infty} c^i - \sum_{i=0}^{n-1} c^i\right) d(x_0, x_1) \\
+    d(x_n, x_m) &\leq d(x_n, x_{n+1}) + \cdots + d(x_{m-1}, x_m) \leq c^n d(x_0, x_1) + \cdots + c^{m-1}d(x_0, x_1) \\
+                &= \sum_{i=n}^{m-1} c^i d(x_0, x_1)  \leq \left(\sum_{i=0}^{\infty} c^i - \sum_{i=0}^{n-1} c^i\right) d(x_0, x_1) \\
                 &= \left(\frac{1}{1-c} - \frac{1-c^n}{1-c}\right) d(x_0, x_1) \\
                 &= \frac{c^n}{1-c} d(x_0, x_1).
 \end{align*}
@@ -112,19 +110,25 @@ $$
 \frac{c^N}{1-c} d(x_0, x_1) < \epsilon.
 $$
 
-Thus, \\(d(x_n, x_m) < \epsilon\\) for all \\(n,m > N\\), so the sequence \\(\{x_n\}\\) is Cauchy. Finally, let \\(x^{\star} \coloneqq \lim_{n \goesto \infty}x_n\\), then 
+Thus, \\(d(x\_n, x\_m) < \epsilon\\) for all \\(n,m > N\\), so the sequence \\(\{x\_n\}\\) is Cauchy. Finally, let \\(x^{\star} \define \lim_{n \goesto \infty}x_n\\), then 
 
 $$
 \lim_{n \goesto \infty} x_n = \lim_{n \goesto \infty} x_{n+1} = \lim_{n \goesto \infty} f(x_n) = x^{\star}.
 $$
 
-Since limits are unique, and \\(f\\) is given to be Lipschitz continuous, we can conclude that \\(f(x^{\star}) = x^{\star}\\) and all we need to conclude that \\(f(x^{\star}) = x^{\star}\\) is that \\(f\\) is continuous. Take any \\(\epsilon > 0\\), set \\(\delta \coloneqq \frac{\epsilon}{c}\\) and for any \\(x, y \in M\\) we have
+Since limits are unique, and \\(f\\) is given to be Lipschitz continuous, we can conclude that \\(f(x^{\star}) = x^{\star}\\) and all we need to conclude that \\(f(x^{\star}) = x^{\star}\\) is that \\(f\\) is continuous. Take any \\(\epsilon > 0\\), set \\(\delta \define \frac{\epsilon}{c}\\) and for any \\(x, y \in M\\) we have
 
 $$
     d(x, y) < \delta \implies d(f(x), f(y)) \leq cd(x,y) < c\delta = \epsilon,
 $$
 
-i.e., \\(f\\) is not only continuous but uniformly continuous, and the proof is complete. \\(\square\\) 
+i.e., \\(f\\) is not only continuous but uniformly continuous, and the proof is complete. \\(\tag{\square}\\) 
+
+We make two remarks about the Banach fixed point theorem. First, any map \\(T\\) that satisfies \eqref{eq:contraction} is called a _contraction_ (thus the alternative name of the theorem, "contraction mapping theorem"), and the constant \\(c\\) is called the _contraction constant_. A contraction is by definition a Lipschitz continuous function with Lipschitz constant strictly less than 1. Second, the requirement that \\(T\\) maps a complete metric space \\(M\\) to itself can be restricted to a closed invariant subset of \\(M\\) under \\(T\\). That is, let \\(T\\) be a contraction on \\(M\\), and suppose that \\(\mathcal{S} \subseteq M\\) is a closed set with respect to the metric topology such that \\(T(\mathcal{S}) \subseteq \mathcal{S}\\), then the map \\(T\vert_{\mathcal{S}}: \mathcal{S} \goesto \mathcal{S}\\) is a contraction since \\(\mathcal{S}\\) contains all of its limit points, and thus, the fixed point \\(x^{\star}\\) as well. 
+
+
+<!-- The last part of this note is a little more application-oriented, and we give a sufficient condition for a differentiable map in \\(\mathbb{R}^n\\) to be a contraction.  -->
+
 
 Conclusion
 -----
