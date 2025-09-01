@@ -391,19 +391,19 @@ All such iterative algorithms aims to stop at some desired point, which dependin
 
 <p>The answers to these questions lie in the the <em>Banach fixed point theorem</em> stated below.</p>
 
-<p><strong>Theorem</strong> (Banach fixed-point theorem). <em>Suppose that there exists some positive constant \(c &lt; 1\) such that, for every \(\,x, y \in M\), the map \(T\) satisfies</em></p>
+<p><strong>Theorem</strong> (Banach fixed-point theorem). <em>Suppose that there exists some positive constant \(c &lt; 1\) such that, for every \(\,x, y \in M\), the map \(\,T\) satisfies</em></p>
 
 \[\begin{equation}\label{eq:contraction}
     d(T(x), T(y)) \leq c d(x,y)
 \end{equation}\]
 
-<p>Then, there exists a unique fixed point \(\,x^{\star}\) of \(\,T\) in \(M\), and every sequence_ \({x_n}_{n \inZ_{\geq 0}}\) <em>such that \(\,x_n \in M\) converges to \(x^{\star}\).</em></p>
+<p><em>Then, there exists a unique fixed point \(\,x^{\star}\) of \(\,T\) in \(\,M\), and every sequence \(\{x_n\}_{n \inZ_{\geq 0}}\) such that \(\,x_n \in M\) converges to \(x^{\star}\).</em></p>
 
 <p><em>Proof</em>. We prove the theorem in several steps. First, we show that if \(f\) has a fixed point, then it must be unique. Assume towards contradiction that both \(x, \tilde{x}\in M\) are both fixed points of \(f\), but \(x \neq \tilde{x}\). Then, since \(x = f(x)\)  and \(\tilde{x} = f(\tilde{x})\), we must have</p>
 
 \[d(x, \tilde{x}) = d(f(x), f(\tilde{x})) \leq cd(x, \tilde{x}) &lt; d(x, \tilde{x}),\]
 
-<p>which is a contradiction. Next, we show that the sequence \({x_n}_{n \inZ_{\geq 0}}\) is Cauchy; in particular, since \(M\) is complete, it converges to a point in \(M\). By construction, we have</p>
+<p>which is a contradiction. Next, we show that the sequence \(\{x_n\}_{n \inZ_{\geq 0}}\) is Cauchy; in particular, since \(M\) is complete, it converges to a point in \(M\). By construction, we have</p>
 
 \[d(x_n, x_{n+1}) \leq cd(x_{n-1}, x_n) \leq c^2d(x_{n-2}, x_{n-1}) \leq \cdots \leq c^n(x_0, x_1)\]
 
@@ -428,7 +428,7 @@ All such iterative algorithms aims to stop at some desired point, which dependin
 
 \[d(x, y) &lt; \delta \implies d(f(x), f(y)) \leq cd(x,y) &lt; c\delta = \epsilon,\]
 
-<p>i.e., \(f\) is not only continuous but uniformly continuous, and the proof is complete. \(\tag{\square}\)</p>
+<p>i.e., \(f\) is not only continuous but uniformly continuous, and the proof is complete. \(\qquad\square\)</p>
 
 <p>As we can see, while the Banach fixed-point theorem relies on certain “niceness” properties of the metric space and knowledge of \(\epsilon\)-\(\delta\) definition of continuity, at its core it utilizes the geometric series identity to obtain the final bound on the iterations, and thereby the fixed point itself.</p>
 
@@ -442,7 +442,8 @@ All such iterative algorithms aims to stop at some desired point, which dependin
 
 <p><br /></p>
 
-<p>Further readings and references</p>
+<h2 id="further-readings-and-references">Further readings and references</h2>
+
 <ol>
   <li>Keith Conrad’s expository papers on Banach fixed-point theorm <a href="https://kconrad.math.uconn.edu/blurbs/analysis/contraction.pdf">Part 1</a> <a href="https://kconrad.math.uconn.edu/blurbs/analysis/contraction2.pdf">Part 2</a></li>
   <li><a href="https://terpconnect.umd.edu/%7Epetersd/666/fixedpoint.pdf">Banach fixed-point theorem in \(\mathbb{R}^n\)</a></li>
