@@ -67,7 +67,7 @@ Formally, let us consider a complete metric space \\((M,d)\\), and we want to an
 2. When is a fixed point \\(x^{\star}\\) of \\(T\\) unique? 
 3. How to compute/find the unique fixed point \\(x^{\star}\\)? 
 
-The answers to these questions lie in the the _Banach fixed point theorem_ stated below. 
+The answers to these questions lie in the _Banach fixed point theorem_ stated below. 
 
 **Theorem** (Banach fixed point theorem). _Suppose that there exists some positive constant \\(c < 1\\) such that, for every \\(\,x, y \in M\\), the map \\(\,T\\) satisfies_
 
