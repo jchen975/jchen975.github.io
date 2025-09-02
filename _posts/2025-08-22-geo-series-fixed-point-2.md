@@ -123,7 +123,7 @@ We make two additional remarks about the Banach fixed point theorem. First, any 
 
 Finally, for practical reasons, we focus on the case of (1) Euclidean spaces, in which the \\(L_p\\) norm is a metric, and (2) \\(T\\) has additional smoothness properties such as continuous differentiability. The (induced) \\(L_p\\) norm of \\(T\\)'s Jacobian evaluated at some point \\(x \inR^n\\), denoted by \\(\Vert J(x)\Vert \\), can sometimes provide a more easily checkable sufficient condition for contractivity. The reason why this condition can be more practical than verifying \eqref{eq:contraction} point-wise is that, in most algorithmic convergence analysis from a fixed point perspective, we often know exactly what the iteration mapping \\(T\\) is, and if it is differentiable, then we can easily compute and bound the \\(L_p\\) norm of its Jacobian.  
 
-**Theorem**. _Let \\(\mathcal{D} \subseteq \mathbb{R}^n\\) be a \\(T\\)-invariant convex set. Suppose that there exists some positive constant \\(c < 1\\) such that, \\(\Vert J(x)\Vert \leq c \\) for every \\(\,x \in \mathcal{D}\\), then \\(T\\) is a contraction with contraction constant \\(c\\), with respect to the norm \\(\Vert \cdot \Vert\\), i.e., for all \\(x, y \in \mathcal{D}\\), 
+**Theorem**. _Let \\(\,\mathcal{D} \subseteq \mathbb{R}^n\\) be a \\(\,T\\)-invariant convex set. Suppose that there exists some positive constant \\(\,c < 1\\) such that \\(\Vert J(x)\Vert \leq c \\) for every \\(\,\,x \in \mathcal{D}\\), then \\(\,T\\) is a contraction with contraction constant \\(\,c\\), with respect to the norm \\(\,\Vert \cdot \Vert\\), i.e., for all \\(\,x, y \in \mathcal{D}\\),_
 
 $$
     \Vert T(x) - T(y) \Vert \leq c \Vert x - y \Vert. 
