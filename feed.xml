@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://ljchen.ca/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ljchen.ca/" rel="alternate" type="text/html" /><updated>2025-09-02T19:25:11+00:00</updated><id>https://ljchen.ca/feed.xml</id><title type="html">Homepage</title><subtitle>personal description</subtitle><author><name>Liangjie (Jeffrey) Chen</name></author><entry><title type="html">From geometric series to fixed point iterations and their applications: Part II</title><link href="https://ljchen.ca/posts/2025/08/geo-series-fixed%20point-2/" rel="alternate" type="text/html" title="From geometric series to fixed point iterations and their applications: Part II" /><published>2025-08-22T00:00:00+00:00</published><updated>2025-08-22T00:00:00+00:00</updated><id>https://ljchen.ca/posts/2025/08/geo-series-fixed-point-2</id><content type="html" xml:base="https://ljchen.ca/posts/2025/08/geo-series-fixed%20point-2/"><![CDATA[<p>Part II of a three-part note on how the common existence and uniqueness results in ODEs and MDPs boil down to the Banach fixed point theorem, which itself is based on the simple geometric series.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://ljchen.ca/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ljchen.ca/" rel="alternate" type="text/html" /><updated>2025-09-02T19:29:16+00:00</updated><id>https://ljchen.ca/feed.xml</id><title type="html">Homepage</title><subtitle>personal description</subtitle><author><name>Liangjie (Jeffrey) Chen</name></author><entry><title type="html">From geometric series to fixed point iterations and their applications: Part II</title><link href="https://ljchen.ca/posts/2025/08/geo-series-fixed%20point-2/" rel="alternate" type="text/html" title="From geometric series to fixed point iterations and their applications: Part II" /><published>2025-08-22T00:00:00+00:00</published><updated>2025-08-22T00:00:00+00:00</updated><id>https://ljchen.ca/posts/2025/08/geo-series-fixed-point-2</id><content type="html" xml:base="https://ljchen.ca/posts/2025/08/geo-series-fixed%20point-2/"><![CDATA[<p>Part II of a three-part note on how the common existence and uniqueness results in ODEs and MDPs boil down to the Banach fixed point theorem, which itself is based on the simple geometric series.</p>
 
 <p><em>Acknowledgement: the content of this post, in particular the Banach fixed point theorem and its proof is based on Prof. Keith Conrad’s <a href="https://kconrad.math.uconn.edu/blurbs/analysis/contraction.pdf">note</a>.</em></p>
 
@@ -83,7 +83,7 @@ All such iterative algorithms aims to stop at some desired point, which dependin
 
 \[d(x, y) &lt; \delta \implies d(T(x), T(y)) \leq cd(x,y) &lt; c\delta = \epsilon,\]
 
-<p>i.e., \(T\) is not only continuous but uniformly continuous, and the proof is complete. \(\tag*{$\square$}\)</p>
+<p>i.e., \(T\) is not only continuous but uniformly continuous, and the proof is complete. \(\endproof\)</p>
 
 <p>As we can see, while the Banach fixed point theorem relies on certain “niceness” properties of the metric space and knowledge of \(\epsilon\)-\(\delta\) definition of continuity, at its core the proof just utilizes the geometric series identity to obtain the final bound on the iterations, and thereby the fixed point itself.</p>
 
@@ -105,12 +105,14 @@ All such iterative algorithms aims to stop at some desired point, which dependin
 
 <p>and taking the \(L_p\) norm of both sides, by triangle inequality and submultiplicativity we get</p>
 
-\[\Vert T(x) - T(y) \Vert
-    = \left \Vert \int_{0}^1  J(tx + (1-t)y) (x - y) \d t \right \Vert 
-    \leq \int_{0}^1 \left \Vert  J(tx + (1-t)y) \right \Vert \d t \Vert x - y \Vert 
-    \leq c \Vert x - y \Vert,\]
+\[\begin{align*}
+    \Vert T(x) - T(y) \Vert
+    &amp;= \left \Vert \int_{0}^1  J(tx + (1-t)y) (x - y) \d t \right \Vert  \\
+    &amp;\leq \int_{0}^1 \left \Vert  J(tx + (1-t)y) \right \Vert \d t \Vert x - y \Vert 
+    \leq c \Vert x - y \Vert,
+\end{align*}\]
 
-<p>i.e., \(T\) is a contraction with contraction constant \(c\). \(\tag*{$\square$}\)</p>
+<p>i.e., \(T\) is a contraction with contraction constant \(c\). \(\endproof\)</p>
 
 <h2 id="conclusion">Conclusion</h2>
 <p>In this note, we explored how some iterative numerical algorithms can be understood via fixed point iterations, the basic formulation of the Banach fixed point theorem and its proof, along with a practical sufficient condition for contractivity. This note, of course, only scratches the very top surface of the vast realm of fixed point theories, and we will explore a little more about its applications in the next and final part of this series of notes.</p>
