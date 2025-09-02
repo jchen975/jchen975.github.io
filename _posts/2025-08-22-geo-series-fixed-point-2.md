@@ -114,7 +114,7 @@ $$
     d(x, y) < \delta \implies d(T(x), T(y)) \leq cd(x,y) < c\delta = \epsilon,
 $$
 
-i.e., \\(T\\) is not only continuous but uniformly continuous, and the proof is complete. \\(\tag*{$\square$}\\)
+i.e., \\(T\\) is not only continuous but uniformly continuous, and the proof is complete. \\(\endproof\\)
 
 As we can see, while the Banach fixed point theorem relies on certain "niceness" properties of the metric space and knowledge of \\(\epsilon\\)-\\(\delta\\) definition of continuity, at its core the proof just utilizes the geometric series identity to obtain the final bound on the iterations, and thereby the fixed point itself. 
 
@@ -144,13 +144,15 @@ $$
 and taking the \\(L_p\\) norm of both sides, by triangle inequality and submultiplicativity we get 
 
 $$
+\begin{align*}
     \Vert T(x) - T(y) \Vert
-    = \left \Vert \int_{0}^1  J(tx + (1-t)y) (x - y) \d t \right \Vert 
-    \leq \int_{0}^1 \left \Vert  J(tx + (1-t)y) \right \Vert \d t \Vert x - y \Vert 
+    &= \left \Vert \int_{0}^1  J(tx + (1-t)y) (x - y) \d t \right \Vert  \\
+    &\leq \int_{0}^1 \left \Vert  J(tx + (1-t)y) \right \Vert \d t \Vert x - y \Vert 
     \leq c \Vert x - y \Vert,
+\end{align*}
 $$
 
-i.e., \\(T\\) is a contraction with contraction constant \\(c\\). \\(\tag*{$\square$}\\)
+i.e., \\(T\\) is a contraction with contraction constant \\(c\\). \\(\endproof\\)
 
 
 Conclusion
