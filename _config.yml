@@ -223,7 +223,7 @@ collections:
   research:
     output: true
     permalink: /:collection/:path/
-  posts:
+  blurbs:
     output: true
     permalink: /:collection/:path/
   # talks:
@@ -236,7 +236,7 @@ defaults:
   # _posts
   - scope:
       path: ""
-      type: posts
+      type: blurbs
     values:
       layout: single
       author_profile: true
@@ -272,7 +272,7 @@ defaults:
   # _posts
   - scope:
       path: ""
-      type: posts
+      type: blurbs
     values:
       layout: single
       author_profile: true

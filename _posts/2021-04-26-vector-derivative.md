@@ -21,8 +21,7 @@ $$
     f : X \goesto Y, 
 $$
 
-where \\(X \subset \mathbb{R}^n\\) and \\(Y \subset \mathbb{R}^m\\) are [domains](https://en.wikipedia.org/wiki/Domain_(mathematical_analysis)) (open and connected sets), and \\(n, m \geq 1\\) are integers. Note that we restrict the attention to such domains to have better control over boundary and local behaviors in the ensuing definitions.  
-In particular, since most objective functions we will use are real-valued, i.e., \\(m = 1\\), most formulas in this note pertains to this case. 
+where \\(X \subset \mathbb{R}^n\\) and \\(Y \subset \mathbb{R}^m\\) are [domains](https://en.wikipedia.org/wiki/Domain_(mathematical_analysis)) (open and connected sets), and \\(n, m \geq 1\\) are integers. Note that we restrict the attention to such domains to have better control over boundary and local behaviors in the ensuing definitions. In particular, since most objective functions we will use are real-valued, i.e., \\(m = 1\\), most formulas in this note pertains to this case. 
 
 To begin, we recall the basic derivative definition when \\(n = m = 1\\), which we would see in the first calculus course: a function \\(f : \mathbb{R} \goesto \mathbb{R}\\) is differentiable at \\(x \inR\\) if the limit 
 
@@ -71,7 +70,7 @@ $$
     D(f \odot g)(x) = Df(g(x))Dg(x). 
 $$
 
-We can further define the second Fréchet derivative, \\(D(Df)\\), and even higher order derivatives, provided \\(f\\) is sufficiently smooth. To be rigorous, we would need to properly define the spaces (bounded multilinear maps) that we work with. However, these definitions get quite messy with the introduction of required advanced tools, which are often unnecessary for practical purposes (see Reference 1 for a better treatment). Instead, we focus on the case of real-valued functions \\(f : \mathbb{R}^n \goesto \mathbb{R}), whose second derivative, under the standard basis, is commonly given by the _Hessian matrix_: 
+We can further define the second Fréchet derivative, \\(D(Df)\\), and even higher order derivatives, provided \\(f\\) is sufficiently smooth. To be rigorous, we would need to properly define the spaces (bounded multilinear maps) that we work with. However, these definitions get quite messy with the introduction of required advanced tools, which are often unnecessary for practical purposes (see Reference 1 for a better treatment). Instead, we focus on the case of real-valued functions \\(f : \mathbb{R}^n \goesto \mathbb{R}\\), whose second derivative, under the standard basis, is commonly given by the _Hessian matrix_: 
 
 $$
     \nabla^2 f(x) = D(\nabla f)(x) = \begin{bmatrix}
@@ -90,7 +89,8 @@ Some common formulas
 Next, we go through some (simple but tedious) example derivative calculations. When I took my first course in optimization, I found these steps helpful to convince myself of the results, but again, they are quite tedious. 
 
 
-1. Take \\(f(x) = \transpose{a} x\\) for some known vector \\(a \inR^{n}). Then, \\(Df(x) = \transpose{a}\\) and \\(\nabla f(x) = a\\).  
+1. Take \\(f(x) = \transpose{a} x\\) for some known vector \\(a \inR^{n}\\). Then, \\(Df(x) = \transpose{a}\\) and \\(\nabla f(x) = a\\).  
+
     _Proof_. 
 
     $$
@@ -129,7 +129,7 @@ Next, we go through some (simple but tedious) example derivative calculations. W
     
     $$
     \begin{bmatrix}
-        a\_{j1} & \\cdots & a\_{jn}
+        a_{j1} & \cdots & a_{jn}
     \end{bmatrix},
     $$
 
@@ -166,7 +166,7 @@ Next, we go through some (simple but tedious) example derivative calculations. W
 
     which is twice the inner product between the \\(k\\)-th row of \\(A\\) and \\(x\\). We can combine the two sums in the second step above since \\(A = \transpose{A}\\), so \\(a_{kj} = a_{ik}\\).  Therefore, the full derivative \\(D\left(\transpose{x}Ax\right)\\) is \\(2Ax\\). Note that, typically we consider the function \\(\frac{1}{2}\transpose{x}Ax\\) instead, where \\(A \inS^n\\) cancels out the constant 2 in the result, since optimizers are not impacted by such constant factors. 
  
-4. It follows that \\(\nabla^2 \left( \transpose{x}Ax\right) = 2A\\).
+4. It follows from the formulas above that \\(\nabla^2 \left( \transpose{x}Ax\right) = 2A\\).
 
 
 <br> 
