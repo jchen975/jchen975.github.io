@@ -5,6 +5,7 @@ permalink: /blurbs/2025/08/geo-series-fixed point-2/
 tags:
   - math
   - algorithm
+collection: blurbs
 ---
 
 Part II of a three-part note on how the common existence and uniqueness results in ODEs and MDPs boil down to the Banach fixed point theorem, which itself is based on the simple geometric series. 

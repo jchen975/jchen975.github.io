@@ -269,15 +269,15 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _posts
-  - scope:
-      path: ""
-      type: blurbs
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comment: true
+  # # _posts
+  # - scope:
+  #     path: ""
+  #     type: posts
+  #   values:
+  #     layout: single
+  #     author_profile: true
+  #     share: true
+  #     comment: true
   # _talks
   - scope:
       path: ""

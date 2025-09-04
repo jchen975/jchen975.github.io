@@ -5,6 +5,7 @@ permalink: /blurbs/2021/04/vec-derivative/
 tags:
   - optimization
   - math
+collection: blurbs
 ---
 
 Some basic Fréchet derivative formulas one often encounters in optimization problems. 
