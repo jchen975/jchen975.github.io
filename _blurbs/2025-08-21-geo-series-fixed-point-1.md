@@ -4,7 +4,6 @@ date: 2025-08-21
 permalink: /blurbs/2025/08/geo-series-fixed-point-1/
 tags:
   - math
-collection: blurbs
 ---
 
 Part I of a three-part note on how the common existence and uniqueness results in ODEs and MDPs boil down to the Banach fixed-point theorem, which itself is based on the simple geometric series. 
