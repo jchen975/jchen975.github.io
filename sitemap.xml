@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://ljchen.ca/posts/2021/04/vec-derivative/</loc>
+<loc>https://ljchen.ca/blurbs/2021/04/vec-derivative/</loc>
 <lastmod>2021-04-26T00:00:00+00:00</lastmod>
 </url>
 <url>
@@ -47,7 +47,7 @@
 <loc>https://ljchen.ca/posts/</loc>
 </url>
 <url>
-<loc>https://ljchen.ca/posts/</loc>
+<loc>https://ljchen.ca/blurbs/</loc>
 </url>
 <url>
 <loc>https://ljchen.ca/research/</loc>
@@ -78,30 +78,30 @@
 </url>
 <url>
 <loc>https://ljchen.ca/files/cv.pdf</loc>
-<lastmod>2025-09-04T16:09:36+00:00</lastmod>
+<lastmod>2025-09-04T16:23:12+00:00</lastmod>
 </url>
 <url>
 <loc>https://ljchen.ca/files/research/fppf-poster.pdf</loc>
-<lastmod>2025-09-04T16:09:36+00:00</lastmod>
+<lastmod>2025-09-04T16:23:12+00:00</lastmod>
 </url>
 <url>
 <loc>https://ljchen.ca/files/research/fppf-slides.pdf</loc>
-<lastmod>2025-09-04T16:09:36+00:00</lastmod>
+<lastmod>2025-09-04T16:23:12+00:00</lastmod>
 </url>
 <url>
 <loc>https://ljchen.ca/files/research/masc-slides.pdf</loc>
-<lastmod>2025-09-04T16:09:36+00:00</lastmod>
+<lastmod>2025-09-04T16:23:12+00:00</lastmod>
 </url>
 <url>
 <loc>https://ljchen.ca/files/research/sgtr-slides.pdf</loc>
-<lastmod>2025-09-04T16:09:36+00:00</lastmod>
+<lastmod>2025-09-04T16:23:12+00:00</lastmod>
 </url>
 <url>
 <loc>https://ljchen.ca/files/resume.pdf</loc>
-<lastmod>2025-09-04T16:09:36+00:00</lastmod>
+<lastmod>2025-09-04T16:23:12+00:00</lastmod>
 </url>
 <url>
 <loc>https://ljchen.ca/talkmap/map.html</loc>
-<lastmod>2025-09-04T16:09:36+00:00</lastmod>
+<lastmod>2025-09-04T16:23:12+00:00</lastmod>
 </url>
 </urlset>
