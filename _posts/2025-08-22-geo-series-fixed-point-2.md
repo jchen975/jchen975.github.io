@@ -1,7 +1,7 @@
 ---
 title: 'From geometric series to fixed point iterations and their applications: Part II'
 date: 2025-08-22  
-permalink: /posts/2025/08/geo-series-fixed point-2/
+permalink: /blurbs/2025/08/geo-series-fixed point-2/
 tags:
   - math
   - algorithm
