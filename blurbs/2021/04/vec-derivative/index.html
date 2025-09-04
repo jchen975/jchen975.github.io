@@ -1,4 +1,348 @@
-<p>Some basic Fréchet derivative formulas one often encounters in optimization problems.</p>
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+
+
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Fréchet derivative and common formulas - Homepage</title>
+
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-04-26T00:00:00+00:00">
+
+
+
+  <link rel="canonical" href="https://ljchen.ca/blurbs/2021/04/vec-derivative/">
+
+
+
+
+
+  
+
+  
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Liangjie (Jeffrey) Chen",
+      "url" : "https://ljchen.ca",
+      "sameAs" : null
+    }
+  </script>
+
+
+
+
+
+
+<!-- end SEO -->
+
+<!-- Open Graph protocol data (https://ogp.me/), used by social media -->
+<meta property="og:locale" content="en-CA">
+<meta property="og:site_name" content="Homepage"> 
+<meta property="og:title" content="Fréchet derivative and common formulas">
+
+  <meta property="og:type" content="article">
+
+
+  <meta property="og:description" name="description" content="Some basic Fréchet derivative formulas one often encounters in optimization problems.">
+
+
+  <meta property="og:url" content="https://ljchen.ca/blurbs/2021/04/vec-derivative/">
+
+
+
+
+
+<!-- end Open Graph protocol -->
+
+<link href="https://ljchen.ca/feed.xml" type="application/atom+xml" rel="alternate" title="Homepage Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://ljchen.ca/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+    
+
+<!-- start custom head snippets -->
+
+<!-- favicon from https://commons.wikimedia.org/wiki/File:OOjs_UI_icon_academic-progressive.svg -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://ljchen.ca/images/apple-touch-icon-180x180.png"/>
+<link rel="icon" type="image/svg+xml" href="https://ljchen.ca/images/favicon.svg"/>
+<link rel="icon" type="image/png" href="https://ljchen.ca/images/favicon-32x32.png" sizes="32x32"/>
+<link rel="icon" type="image/png" href="https://ljchen.ca/images/favicon-192x192.png" sizes="192x192"/>
+<link rel="manifest" href="https://ljchen.ca/images/manifest.json"/>
+<link rel="icon" href="/images/favicon.ico"/>
+<meta name="theme-color" content="#ffffff"/>
+<link rel="stylesheet" href="https://ljchen.ca/assets/css/academicons.css"/>
+
+
+<!-- Support for MatJax -->
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- end custom head snippets -->
+
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      scale: 95// Scale equations to 95% of the default size
+    },
+    TeX: {
+      extensions: ["AMSmath.js"],
+      tags: "ams",
+      Macros: {
+        inR: "\\in \\mathbb{R}", 
+        inC: "\\in \\mathbb{C}",
+        inZ: "\\in \\mathbb{Z}",
+        inN: "\\in \\mathbb{N}",
+        inQ: "\\in \\mathbb{Q}",
+        inF: "\\in \\mathbb{F}",
+        inS: "\\in \\mathbb{S}",
+
+        j: "\\boldsymbol{\\mathrm{j}}", 
+        e: "\\boldsymbol{\\mathrm{e}}",
+        re: "\\mathrm{Re}",
+        im: "\\mathrm{Im}",
+        det: "\\mathrm{det}",
+
+        minimize: ["\\underset{#1}{\\mathrm{minimize}}", 1],
+        maximize: ["\\underset{#1}{\\mathrm{maximize}}", 1],
+        st: "\\mathrm{subject\\ to}",
+
+        trace: "\\mathrm{tr}",
+        diag: "\\mathrm{diag}",
+
+        goesto: "\\rightarrow",
+        implies: "\\Rightarrow",
+        define: "\\triangleq",
+        
+        transpose: ["{#1}^{\\mathsf{T}}", 1], 
+        pinv: ["{#1}^{\\dagger}", 1],
+
+        deg: ["{\\mathrm{deg}(#1)}", 1],
+        indeg: ["{\\mathrm{indeg}(#1)}", 1],
+        outdeg: ["{\\mathrm{outdeg}(#1)}", 1], 
+
+        zero: "\\mathbf{0}",
+        one: "\\mathbf{1}", 
+
+        d: "\\mathrm{d}", 
+
+        endproof: "\\tag*{\\(\square\\)}"
+      },
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    }
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_HTML"></script>
+  </head>
+
+  <body>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <button><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg persist"><a href="https://ljchen.ca/">Homepage</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://ljchen.ca/research/">Research</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://ljchen.ca/blurbs/">Notes & Blurbs</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://ljchen.ca/misc/">Misc</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://ljchen.ca/files/cv.pdf">CV</a></li>
+          
+          <li id="theme-toggle" class="masthead__menu-item persist tail">
+            <a><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
+          </li>
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+  <div class="sidebar sticky">
+  
+
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  <div class="author__avatar">
+    
+    	<img src="https://ljchen.ca/images/profile.jpg" class="author__avatar" alt="Liangjie (Jeffrey) Chen">
+    
+  </div>
+
+  <div class="author__content">
+    <h3 class="author__name">Liangjie (Jeffrey) Chen</h3>
+    
+    <p class="author__bio">data-driven control & optimization</p>
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      <!-- Font Awesome icons / Biographic information  -->
+      
+        <li class="author__desktop"><i class="fas fa-fw fa-location-dot icon-pad-right" aria-hidden="true"></i>Canada</li>
+      
+      
+        <li class="author__desktop"><i class="fas fa-fw fa-building-columns icon-pad-right" aria-hidden="true"></i>University of Toronto</li>
+      
+      
+      
+
+      <!-- Font Awesome and Academicons icons / Academic websites -->
+      
+            
+      
+        <li><a href="https://scholar.google.com/citations?user=juDFQPEAAAAJ&hl=en"><i class="ai ai-google-scholar ai-fw icon-pad-right"></i>Google Scholar</a></li>
+      
+      
+      
+      
+                              
+      
+      
+
+      <!-- Font Awesome icons / Repositories and software development -->
+      
+            
+            
+      
+        <li><a href="https://github.com/jchen975"><i class="fab fa-fw fa-github icon-pad-right" aria-hidden="true"></i>GitHub</a></li>
+      
+            
+            
+
+      <!-- Font Awesome icons / Social media -->
+      
+      
+            
+      
+                  
+                  
+      
+            
+            
+      
+        <li><a href="https://www.linkedin.com/in/jchen975"><i class="fab fa-fw fa-linkedin icon-pad-right" aria-hidden="true"></i>LinkedIn</a></li>
+            
+      
+            
+                  
+            
+      
+            
+            
+      
+              
+      
+                      
+      
+      
+            
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Fréchet derivative and common formulas">
+    <meta itemprop="description" content="Some basic Fréchet derivative formulas one often encounters in optimization problems.">
+    <meta itemprop="datePublished" content="April 26, 2021">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Fréchet derivative and common formulas
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> 
+
+
+  
+	  7 minute read
+	
+</p>
+          
+        
+        
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2021-04-26T00:00:00+00:00">April 26, 2021</time></p>
+            
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>Some basic Fréchet derivative formulas one often encounters in optimization problems.</p>
 
 <p><em>Acknowledgement: the content of this post originates from Appendix A.4 of Convex Optimization by Boyd &amp; Vandenberghe, and the Introduction to Nonlinear Systems (ECE1647) lecture notes by Prof. Manfredi Maggiore at University of Toronto.</em></p>
 
@@ -141,3 +485,128 @@
 </ol>
 
 <p><em>Last updated: 2025-09-03 15:32 EST</em></p>
+
+
+        
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="https://ljchen.ca/tags/#math" class="page__taxonomy-item" rel="tag">math</a><span class="sep">, </span>
+    
+      
+      
+      <a href="https://ljchen.ca/tags/#optimization" class="page__taxonomy-item" rel="tag">optimization</a>
+    
+    </span>
+  </p>
+
+
+
+
+      </footer>
+
+      
+
+<section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://bsky.app/intent/compose?text=https://ljchen.ca/blurbs/2021/04/vec-derivative/" class="btn btn--bluesky" title="Share on Bluesky"><i class="fab fa-bluesky" aria-hidden="true"></i><span> Bluesky</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://ljchen.ca/blurbs/2021/04/vec-derivative/" class="btn btn--facebook" title="Share on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://ljchen.ca/blurbs/2021/04/vec-derivative/" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+
+  <a href="https://x.com/intent/post?text=https://ljchen.ca/blurbs/2021/04/vec-derivative/" class="btn btn--x" title="Share on X"><i class="fab fa-x-twitter" aria-hidden="true"></i><span> X (formerly Twitter)</span></a>
+</section>
+
+
+      
+
+
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
+      <a href="https://ljchen.ca/blurbs/2021/05/sdp/" class="pagination--pager" title="Equivalent formulations of semidefinite programs using linear matrix inequality and trace
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<!-- end custom footer snippets -->
+
+        
+
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+      <li><a href="http://github.com/jchen975"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    
+    <li><a href="https://ljchen.ca/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+
+<div class="page__footer-copyright">
+  &copy; 2025 Liangjie (Jeffrey) Chen, Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br />
+  Site last updated 2025-09-04
+</div>
+
+      </footer>
+    </div>
+
+    <script src="https://ljchen.ca/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>
+
