@@ -1,7 +1,7 @@
 ---
 title: 'Fréchet derivative and common formulas'
 date: 2021-04-26  
-permalink: /posts/2021/04/vec-derivative/
+permalink: /blurbs/2021/04/vec-derivative/
 tags:
   - optimization
   - math
@@ -21,10 +21,10 @@ $$
     f : X \goesto Y, 
 $$
 
-where \\(X \subset \mathbb{R}^n\\) and \\(Y \subset mathbb{R}^m\\) are [domains](https://en.wikipedia.org/wiki/Domain_(mathematical_analysis)) (open and connected sets), and \\(n, m \geq 1\\) are integers. Note that we restrict the attention to such domains to have better control over boundary and local behaviors in the ensuing definitions.  
+where \\(X \subset \mathbb{R}^n\\) and \\(Y \subset \mathbb{R}^m\\) are [domains](https://en.wikipedia.org/wiki/Domain_(mathematical_analysis)) (open and connected sets), and \\(n, m \geq 1\\) are integers. Note that we restrict the attention to such domains to have better control over boundary and local behaviors in the ensuing definitions.  
 In particular, since most objective functions we will use are real-valued, i.e., \\(m = 1\\), most formulas in this note pertains to this case. 
 
-To begin, we recall the basic derivative definition when \\(n = m = 1\\), which we would see in the first calculus course: a function \\(f : \mathbb{R} \goesto mathbb{R}\\) is differentiable at \\(x \inR\\) if the limit 
+To begin, we recall the basic derivative definition when \\(n = m = 1\\), which we would see in the first calculus course: a function \\(f : \mathbb{R} \goesto \mathbb{R}\\) is differentiable at \\(x \inR\\) if the limit 
 
 $$
 \begin{equation}\label{eq:diff-scalar}
@@ -40,7 +40,7 @@ $$
 \end{equation}
 $$
 
-To generalize this definition to vector- and matrix-valued functions, we use the _Fréchet derivative_. (Note: we will only discuss the case of _vector-_ valued functions, since matrix-valued functions can be equivalently understood via the linear, bijective _[vecorization](https://en.wikipedia.org/wiki/Vectorization_(mathematics))_ operation, even though it is only an algebraic "convenience" and does not reflect many deeper geometric meanings of matrix-valued functions). We say \\(f: X \goesto Y\\) is (Fréchet) differentiable at \\(x \in X\\) if there exists a linear operator \\(Df : \mathbb{R}^n \goesto mathbb{R}^m\\), such that 
+To generalize this definition to vector- and matrix-valued functions, we use the _Fréchet derivative_. (Note: we will only discuss the case of _vector-_ valued functions, since matrix-valued functions can be equivalently understood via the linear, bijective _[vecorization](https://en.wikipedia.org/wiki/Vectorization_(mathematics))_ operation, even though it is only an algebraic "convenience" and does not reflect many deeper geometric meanings of matrix-valued functions). We say \\(f: X \goesto Y\\) is (Fréchet) differentiable at \\(x \in X\\) if there exists a linear operator \\(Df : \mathbb{R}^n \goesto \mathbb{R}^m\\), such that 
 
 $$
 \begin{equation}\label{eq:diff-frechet}
@@ -48,7 +48,7 @@ $$
 \end{equation}
 $$
 
-The Fréchet derivative of \\(f\\) at a point \\(x \in X\\) is denoted by \\Df(x)\\, and is unique if it exists. We can observe the similarity between \eqref{eq:diff-frechet} and \eqref{eq:diff-scalar-1}. Note that the norms in \eqref{eq:diff-frechet} are understood to be \\(L_p\\) norms consistent with the dimensions \\(n,m\\). If \\(f\\) is differentiable at _every_ \\(x \in X\\), then we say \\(f\\) is _differentiable_. Furthremore, if \\(f\\) is differentiable, and the map \\(x \mapsto Df\\) from \\(X\\) to \\(\mathbb{R}^{m \times n}\\) is continuous, then we say \\(f\\) is _continuously differentiable_, and write \\(f\\) is \\(\mathcal{C}^1\\). Under the standard bases of \\(\mathbb{R}^n\\) and \\(\mathbb{R}^m), the matrix representation of \\(Df\\) is the _Jacobian matrix_. Let \\(\\{\e\_1, \dots, \e\_n\\}\\) be the set of standard basis vectors in \\(\mathbb{R}^n\\), we define 
+The Fréchet derivative of \\(f\\) at a point \\(x \in X\\) is denoted by \\Df(x)\\, and is unique if it exists. We can observe the similarity between \eqref{eq:diff-frechet} and \eqref{eq:diff-scalar-1}. Note that the norms in \eqref{eq:diff-frechet} are understood to be \\(L_p\\) norms consistent with the dimensions \\(n,m\\). If \\(f\\) is differentiable at _every_ \\(x \in X\\), then we say \\(f\\) is _differentiable_. Furthremore, if \\(f\\) is differentiable, and the map \\(x \mapsto Df\\) from \\(X\\) to \\(\mathbb{R}^{m \times n}\\) is continuous, then we say \\(f\\) is _continuously differentiable_, and write \\(f\\) is \\(\mathcal{C}^1\\). Under the standard bases of \\(\mathbb{R}^n\\) and \\(\mathbb{R}^m\\), the matrix representation of \\(Df\\) is the _Jacobian matrix_. Let \\(\\{\e\_1, \dots, \e\_n\\}\\) be the set of standard basis vectors in \\(\mathbb{R}^n\\), we define 
 
 $$
     \frac{\partial f_{i}}{\partial x_j}(x) = \lim_{t \goesto 0} \frac{f(x + t \e_j) - f(x)}{t}, 
@@ -58,7 +58,8 @@ as the \\(j\\)-th _partial derivative_ of \\(f\\) at \\(x\\), if the limit exist
 
 $$
     Df(x) = \begin{bmatrix}
-        \frac{\partial f}{\partial x_1} & \frac{\partial f}{\partial x_2} \dots \frac{\partial f}{\partial x_n}, 
+        
+        \dfrac{\partial f}{\partial x_1} & \dfrac{\partial f}{\partial x_2} \dots \dfrac{\partial f}{\partial x_n}, 
     \end{bmatrix}
 $$
 
@@ -74,9 +75,9 @@ We can further define the second Fréchet derivative, \\(D(Df)\\), and even high
 
 $$
     \nabla^2 f(x) = D(\nabla f)(x) = \begin{bmatrix}
-        \frac{\partial^2 f(x)}{\partial x_1\partial x_1} & \cdots & \frac{\partial f^2(x)}{\partial x_1 \partial x_n} \\
+        \dfrac{\partial^2 f(x)}{\partial x_1\partial x_1} & \cdots & \dfrac{\partial f^2(x)}{\partial x_1 \partial x_n} \\
         \vdots & \ddots & \vdots \\
-        \frac{\partial^2 f(x)}{\partial x_n \partial x_1} & \cdots & \frac{\partial^2 f(x)}{\partial x_n \partial x_n}
+        \dfrac{\partial^2 f(x)}{\partial x_n \partial x_1} & \cdots & \dfrac{\partial^2 f(x)}{\partial x_n \partial x_n}
 \end{bmatrix}.
 $$
 
@@ -95,9 +96,9 @@ Next, we go through some (simple but tedious) example derivative calculations. W
     $$
         D \left(\transpose{a}x\right) = 
         \begin{bmatrix}
-            \Frac{\partial}{\partial x_1}\Sum_{i=1}^n a_ix_i &
+            \dfrac{\partial}{\partial x_1}\sum_{i=1}^n a_ix_i &
             \cdots &
-            \Frac{\partial}{\partial x_n}\Sum_{i=1}^n a_ix_i
+            \dfrac{\partial}{\partial x_n}\sum_{i=1}^n a_ix_i
         \end{bmatrix} = 
         \begin{bmatrix}
             a_1 & \cdots & a_n
@@ -118,16 +119,20 @@ Next, we go through some (simple but tedious) example derivative calculations. W
         x_1 \\ \vdots \\ x_n
     \end{bmatrix} \right)
     = \begin{bmatrix}
-        D\left( \Sum_{i=1}^n a_{1i}x_i \right)\\
+        D\left( \sum_{i=1}^n a_{1i}x_i \right)\\
         \vdots \\
-        D\left(\Sum_{i=1}^n a_{ni}x_i \right)
+        D\left(\sum_{i=1}^n a_{ni}x_i \right)
     \end{bmatrix}.
     $$
 
     From the previous identity, \\(D \\left(\\sum\_{i=1}^n a\_{ji}x\_i\\right)\\) for \\(j \in \\{1,...,n\\}\\) results in the row vector 
-    \\(\begin{bmatrix}
+    
+    $$
+    \begin{bmatrix}
         a\_{j1} & \\cdots & a\_{jn}
-    \end{bmatrix}\\), 
+    \end{bmatrix},
+    $$
+
     which is precisely the \\(j\\)-th row of the matrix \\(A\\). Therefore, \\(D(Ax) = A\\).
 
 3. For a matrix \\(A \inS^n\\), i.e., \\(A = \transpose{A}\\), we have that \\(D \left(\transpose{x}Ax\right) = 2Ax\\). 
@@ -136,7 +141,7 @@ Next, we go through some (simple but tedious) example derivative calculations. W
     If we treat \\(f(x) = \transpose{x}Ax\\), evidently \\(f\\) is real valued, so we want to find 
     
     $$
-    \begin{bmatrix}\frac{\partial f(x)}{\partial x_1} & \cdots & \frac{\partial f(x)}{\partial x_n}\end{bmatrix}. 
+    \begin{bmatrix}\dfrac{\partial f(x)}{\partial x_1} & \cdots & \dfrac{\partial f(x)}{\partial x_n}\end{bmatrix}. 
     $$
 
     Expanding \\(f\\), for \\(k \in \\{1,...,n\\}\\), we have
@@ -148,15 +153,18 @@ Next, we go through some (simple but tedious) example derivative calculations. W
         &= x_k\left(a_{kk}x_k + \sum_{j\neq k} a_{kj}x_j\right) + \sum_{i\neq k} \left( x_ia_{ik}x_k + x_i \sum_{j\neq k} a_{ij}x_j\right) \\
         &= a_{kk}x_k^2 + \left(\sum_{j\neq k} a_{kj}x_j\right)x_k + \left(\sum_{i\neq k} a_{ik}x_i\right)x_k + \sum_{i\neq k}\sum_{j\neq k} a_{ij}x_jx_i.
     \end{align*}
-    Take the derivative of each term above with respect to $x_k$, and we get 
+    $$
+
+    Take the derivative of each term above with respect to \\(x\_k\\), and we get 
+
+    $$
     \begin{align*}
         \frac{\partial}{\partial x_k} \transpose{x}Ax = 2a_{kk}x_k + \sum_{j\neq k} a_{kj}x_j + \sum_{i\neq k} a_{ik}x_i 
         = 2a_{kk}x_k + 2\sum_{j\neq k} a_{kj}x_j = 2\sum_{j=1}^n a_{kj}x_j,
     \end{align*}
     $$
 
-    which is twice the inner product between the \\(k\\)-th row of \\(A\\) and \\(x\\). We can combine the two sums in the second step above since \\(A = \transpose{A}\\), so \\(a_{kj} = a_{ik}\\).  
-    Therefore, the full derivative \\(D\left(\transpose{x}Ax\right)\\) is \\(2Ax\\). Note that, typically we consider the function \\(\frac{1}{2}\transpose{x}Ax\\) instead, where \\(A \inS^n\\) cancels out the constant 2 in the result, since optimizers are not impacted by such constant factors. 
+    which is twice the inner product between the \\(k\\)-th row of \\(A\\) and \\(x\\). We can combine the two sums in the second step above since \\(A = \transpose{A}\\), so \\(a_{kj} = a_{ik}\\).  Therefore, the full derivative \\(D\left(\transpose{x}Ax\right)\\) is \\(2Ax\\). Note that, typically we consider the function \\(\frac{1}{2}\transpose{x}Ax\\) instead, where \\(A \inS^n\\) cancels out the constant 2 in the result, since optimizers are not impacted by such constant factors. 
  
 4. It follows that \\(\nabla^2 \left( \transpose{x}Ax\right) = 2A\\).
 
@@ -166,7 +174,5 @@ Next, we go through some (simple but tedious) example derivative calculations. W
 Further readings and references
 -----
 1. Fréchet derivative in [general Banach spaces](https://desvl.xyz/2020/07/31/frechet-derivative/)
-2. 
-
 
 _Last updated: 2025-09-03 15:32 EST_

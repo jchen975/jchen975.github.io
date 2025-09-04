@@ -1,7 +1,7 @@
 ---
 layout: archive
-title: "Posts"
-permalink: /posts/
+title: "Notes & Blurbs"
+permalink: /blurbs/
 author_profile: true
 collection: posts
 ---
