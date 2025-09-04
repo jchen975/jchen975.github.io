@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://ljchen.ca/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ljchen.ca/" rel="alternate" type="text/html" /><updated>2025-09-04T16:23:36+00:00</updated><id>https://ljchen.ca/feed.xml</id><title type="html">Homepage</title><subtitle>personal description</subtitle><author><name>Liangjie (Jeffrey) Chen</name></author><entry><title type="html">From geometric series to fixed point iterations and their applications: Part II</title><link href="https://ljchen.ca/blurbs/2025/08/geo-series-fixed%20point-2/" rel="alternate" type="text/html" title="From geometric series to fixed point iterations and their applications: Part II" /><published>2025-08-22T00:00:00+00:00</published><updated>2025-08-22T00:00:00+00:00</updated><id>https://ljchen.ca/blurbs/2025/08/geo-series-fixed-point-2</id><content type="html" xml:base="https://ljchen.ca/blurbs/2025/08/geo-series-fixed%20point-2/"><![CDATA[<p>Part II of a three-part note on how the common existence and uniqueness results in ODEs and MDPs boil down to the Banach fixed point theorem, which itself is based on the simple geometric series.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://ljchen.ca/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ljchen.ca/" rel="alternate" type="text/html" /><updated>2025-09-04T18:40:19+00:00</updated><id>https://ljchen.ca/feed.xml</id><title type="html">Homepage</title><subtitle>personal description</subtitle><author><name>Liangjie (Jeffrey) Chen</name></author><entry><title type="html">From geometric series to fixed point iterations and their applications: Part II</title><link href="https://ljchen.ca/blurbs/2025/08/geo-series-fixed%20point-2/" rel="alternate" type="text/html" title="From geometric series to fixed point iterations and their applications: Part II" /><published>2025-08-22T00:00:00+00:00</published><updated>2025-08-22T00:00:00+00:00</updated><id>https://ljchen.ca/blurbs/2025/08/geo-series-fixed-point-2</id><content type="html" xml:base="https://ljchen.ca/blurbs/2025/08/geo-series-fixed%20point-2/"><![CDATA[<p>Part II of a three-part note on how the common existence and uniqueness results in ODEs and MDPs boil down to the Banach fixed point theorem, which itself is based on the simple geometric series.</p>
 
 <p><em>Acknowledgement: the content of this post, in particular the Banach fixed point theorem and its proof is based on Prof. Keith Conrad’s <a href="https://kconrad.math.uconn.edu/blurbs/analysis/contraction.pdf">note</a>.</em></p>
 
@@ -334,8 +334,7 @@ Analogous to the decomposition of \(x\), we can decompose the cost vector \(c\) 
 
 \[f : X \goesto Y,\]
 
-<p>where \(X \subset \mathbb{R}^n\) and \(Y \subset \mathbb{R}^m\) are <a href="https://en.wikipedia.org/wiki/Domain_(mathematical_analysis)">domains</a> (open and connected sets), and \(n, m \geq 1\) are integers. Note that we restrict the attention to such domains to have better control over boundary and local behaviors in the ensuing definitions.<br />
-In particular, since most objective functions we will use are real-valued, i.e., \(m = 1\), most formulas in this note pertains to this case.</p>
+<p>where \(X \subset \mathbb{R}^n\) and \(Y \subset \mathbb{R}^m\) are <a href="https://en.wikipedia.org/wiki/Domain_(mathematical_analysis)">domains</a> (open and connected sets), and \(n, m \geq 1\) are integers. Note that we restrict the attention to such domains to have better control over boundary and local behaviors in the ensuing definitions. In particular, since most objective functions we will use are real-valued, i.e., \(m = 1\), most formulas in this note pertains to this case.</p>
 
 <p>To begin, we recall the basic derivative definition when \(n = m = 1\), which we would see in the first calculus course: a function \(f : \mathbb{R} \goesto \mathbb{R}\) is differentiable at \(x \inR\) if the limit</p>
 
@@ -372,7 +371,7 @@ In particular, since most objective functions we will use are real-valued, i.e.,
 
 \[D(f \odot g)(x) = Df(g(x))Dg(x).\]
 
-<p>We can further define the second Fréchet derivative, \(D(Df)\), and even higher order derivatives, provided \(f\) is sufficiently smooth. To be rigorous, we would need to properly define the spaces (bounded multilinear maps) that we work with. However, these definitions get quite messy with the introduction of required advanced tools, which are often unnecessary for practical purposes (see Reference 1 for a better treatment). Instead, we focus on the case of real-valued functions \(f : \mathbb{R}^n \goesto \mathbb{R}), whose second derivative, under the standard basis, is commonly given by the <em>Hessian matrix</em>:</p>
+<p>We can further define the second Fréchet derivative, \(D(Df)\), and even higher order derivatives, provided \(f\) is sufficiently smooth. To be rigorous, we would need to properly define the spaces (bounded multilinear maps) that we work with. However, these definitions get quite messy with the introduction of required advanced tools, which are often unnecessary for practical purposes (see Reference 1 for a better treatment). Instead, we focus on the case of real-valued functions \(f : \mathbb{R}^n \goesto \mathbb{R}\), whose second derivative, under the standard basis, is commonly given by the <em>Hessian matrix</em>:</p>
 
 \[\nabla^2 f(x) = D(\nabla f)(x) = \begin{bmatrix}
         \dfrac{\partial^2 f(x)}{\partial x_1\partial x_1} &amp; \cdots &amp; \dfrac{\partial f^2(x)}{\partial x_1 \partial x_n} \\
@@ -388,8 +387,9 @@ In particular, since most objective functions we will use are real-valued, i.e.,
 
 <ol>
   <li>
-    <p>Take \(f(x) = \transpose{a} x\) for some known vector \(a \inR^{n}). Then, \(Df(x) = \transpose{a}\) and \(\nabla f(x) = a\).<br />
- <em>Proof</em>.</p>
+    <p>Take \(f(x) = \transpose{a} x\) for some known vector \(a \inR^{n}\). Then, \(Df(x) = \transpose{a}\) and \(\nabla f(x) = a\).</p>
+
+    <p><em>Proof</em>.</p>
 
 \[D \left(\transpose{a}x\right) = 
      \begin{bmatrix}
@@ -423,7 +423,7 @@ In particular, since most objective functions we will use are real-valued, i.e.,
     <p>From the previous identity, \(D \left(\sum_{i=1}^n a_{ji}x_i\right)\) for \(j \in \{1,…,n\}\) results in the row vector</p>
 
 \[\begin{bmatrix}
-     a\_{j1} &amp; \\cdots &amp; a\_{jn}
+     a_{j1} &amp; \cdots &amp; a_{jn}
  \end{bmatrix},\]
 
     <p>which is precisely the \(j\)-th row of the matrix \(A\). Therefore, \(D(Ax) = A\).</p>
@@ -455,7 +455,7 @@ In particular, since most objective functions we will use are real-valued, i.e.,
     <p>which is twice the inner product between the \(k\)-th row of \(A\) and \(x\). We can combine the two sums in the second step above since \(A = \transpose{A}\), so \(a_{kj} = a_{ik}\).  Therefore, the full derivative \(D\left(\transpose{x}Ax\right)\) is \(2Ax\). Note that, typically we consider the function \(\frac{1}{2}\transpose{x}Ax\) instead, where \(A \inS^n\) cancels out the constant 2 in the result, since optimizers are not impacted by such constant factors.</p>
   </li>
   <li>
-    <p>It follows that \(\nabla^2 \left( \transpose{x}Ax\right) = 2A\).</p>
+    <p>It follows from the formulas above that \(\nabla^2 \left( \transpose{x}Ax\right) = 2A\).</p>
   </li>
 </ol>
 
