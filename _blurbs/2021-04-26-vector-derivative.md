@@ -39,7 +39,7 @@ $$
 \end{equation}
 $$
 
-To generalize this definition to vector- and matrix-valued functions, we use the _Fréchet derivative_. (Note: we will only discuss the case of _vector-_ valued functions, since matrix-valued functions can be equivalently understood via the linear, bijective _[vecorization](https://en.wikipedia.org/wiki/Vectorization_(mathematics))_ operation, even though it is only an algebraic "convenience" and does not reflect many deeper geometric meanings of matrix-valued functions). We say \\(f: X \goesto Y\\) is (Fréchet) differentiable at \\(x \in X\\) if there exists a linear operator \\(Df : \mathbb{R}^n \goesto \mathbb{R}^m\\), such that 
+To generalize this definition to vector- and matrix-valued functions, we use the _Fréchet derivative_. (Note: we will only discuss the case of _vector-_ valued functions, since matrix-valued functions can be equivalently understood via the linear, bijective [vectorization](https://en.wikipedia.org/wiki/Vectorization_(mathematics)) operation, even though it is only an algebraic "convenience" and does not reflect many deeper geometric meanings of matrix-valued functions). We say \\(f: X \goesto Y\\) is (Fréchet) differentiable at \\(x \in X\\) if there exists a linear operator \\(Df : \mathbb{R}^n \goesto \mathbb{R}^m\\), such that 
 
 $$
 \begin{equation}\label{eq:diff-frechet}
@@ -64,10 +64,10 @@ $$
 
 and its transpose is the (more) commonly seen _gradient_, denoted by \\(\nabla f(x)\\). 
 
-The classic chain rule can also be extended to vector-valued functions: let \\(X,Y\\) and \\(Z\\) be domains of \\(\mathbb{R}^n\\), \\(\mathbb{R}^m\\), and \\(\mathbb{R}^p\\), respectively, and let \\(f : Y \goesto Z\\), \\(g : X \goesto Y\\) be differentiable. Then, the composite function \\(f \odot g : X \goesto Z\\) is differentiable and 
+The classic chain rule can also be extended to vector-valued functions: let \\(X,Y\\) and \\(Z\\) be domains of \\(\mathbb{R}^n\\), \\(\mathbb{R}^m\\), and \\(\mathbb{R}^p\\), respectively, and let \\(f : Y \goesto Z\\), \\(g : X \goesto Y\\) be differentiable. Then, the composite function \\(f \circ g : X \goesto Z\\) is differentiable and 
 
 $$
-    D(f \odot g)(x) = Df(g(x))Dg(x). 
+    D(f \circ g)(x) = Df(g(x))Dg(x). 
 $$
 
 We can further define the second Fréchet derivative, \\(D(Df)\\), and even higher order derivatives, provided \\(f\\) is sufficiently smooth. To be rigorous, we would need to properly define the spaces (bounded multilinear maps) that we work with. However, these definitions get quite messy with the introduction of required advanced tools, which are often unnecessary for practical purposes (see Reference 1 for a better treatment). Instead, we focus on the case of real-valued functions \\(f : \mathbb{R}^n \goesto \mathbb{R}\\), whose second derivative, under the standard basis, is commonly given by the _Hessian matrix_: 
