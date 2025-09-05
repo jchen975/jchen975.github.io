@@ -366,7 +366,7 @@
     \lim_{h \goesto 0} \frac{\vert f(x + h) - f(x) - f'(x)h \vert}{\vert h\vert} = 0.
 \end{equation}\]
 
-<p>To generalize this definition to vector- and matrix-valued functions, we use the <em>Fréchet derivative</em>. (Note: we will only discuss the case of <em>vector-</em> valued functions, since matrix-valued functions can be equivalently understood via the linear, bijective <em><a href="https://en.wikipedia.org/wiki/Vectorization_(mathematics)">vecorization</a></em> operation, even though it is only an algebraic “convenience” and does not reflect many deeper geometric meanings of matrix-valued functions). We say \(f: X \goesto Y\) is (Fréchet) differentiable at \(x \in X\) if there exists a linear operator \(Df : \mathbb{R}^n \goesto \mathbb{R}^m\), such that</p>
+<p>To generalize this definition to vector- and matrix-valued functions, we use the <em>Fréchet derivative</em>. (Note: we will only discuss the case of <em>vector-</em> valued functions, since matrix-valued functions can be equivalently understood via the linear, bijective <a href="https://en.wikipedia.org/wiki/Vectorization_(mathematics)">vectorization</a> operation, even though it is only an algebraic “convenience” and does not reflect many deeper geometric meanings of matrix-valued functions). We say \(f: X \goesto Y\) is (Fréchet) differentiable at \(x \in X\) if there exists a linear operator \(Df : \mathbb{R}^n \goesto \mathbb{R}^m\), such that</p>
 
 \[\begin{equation}\label{eq:diff-frechet}
     \lim_{h \goesto \zero} \frac{\Vert f(x + h) - f(x) - Df(x)h \Vert}{\Vert h\Vert} = \zero. 
@@ -385,9 +385,9 @@
 
 <p>and its transpose is the (more) commonly seen <em>gradient</em>, denoted by \(\nabla f(x)\).</p>
 
-<p>The classic chain rule can also be extended to vector-valued functions: let \(X,Y\) and \(Z\) be domains of \(\mathbb{R}^n\), \(\mathbb{R}^m\), and \(\mathbb{R}^p\), respectively, and let \(f : Y \goesto Z\), \(g : X \goesto Y\) be differentiable. Then, the composite function \(f \odot g : X \goesto Z\) is differentiable and</p>
+<p>The classic chain rule can also be extended to vector-valued functions: let \(X,Y\) and \(Z\) be domains of \(\mathbb{R}^n\), \(\mathbb{R}^m\), and \(\mathbb{R}^p\), respectively, and let \(f : Y \goesto Z\), \(g : X \goesto Y\) be differentiable. Then, the composite function \(f \circ g : X \goesto Z\) is differentiable and</p>
 
-\[D(f \odot g)(x) = Df(g(x))Dg(x).\]
+\[D(f \circ g)(x) = Df(g(x))Dg(x).\]
 
 <p>We can further define the second Fréchet derivative, \(D(Df)\), and even higher order derivatives, provided \(f\) is sufficiently smooth. To be rigorous, we would need to properly define the spaces (bounded multilinear maps) that we work with. However, these definitions get quite messy with the introduction of required advanced tools, which are often unnecessary for practical purposes (see Reference 1 for a better treatment). Instead, we focus on the case of real-valued functions \(f : \mathbb{R}^n \goesto \mathbb{R}\), whose second derivative, under the standard basis, is commonly given by the <em>Hessian matrix</em>:</p>
 
@@ -592,7 +592,7 @@
 
 <div class="page__footer-copyright">
   &copy; 2025 Liangjie (Jeffrey) Chen, Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br />
-  Site last updated 2025-09-04
+  Site last updated 2025-09-05
 </div>
 
       </footer>
