@@ -226,6 +226,9 @@ collections:
   blurbs:
     output: true
     permalink: /:collection/:path/
+  misc:
+    output: true
+    permalink: /:collection/:path/  
   # talks:
   #   output: true
   #   permalink: /:collection/:path/
