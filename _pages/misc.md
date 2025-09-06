@@ -45,6 +45,7 @@ Books (others)
 5. Nana Kwame Adjei-Brenyah, [Friday Black](https://www.nanakwameadjei-brenyah.com/friday-black-1) (save "Friday Black" for the last!) 
 
 Blogs and Notes
+-----
 1. Keith Conrad's [expository papers](https://kconrad.math.uconn.edu/blurbs/)
 2. Nick Higham's [blog](https://nhigham.com/blog/)
 3. Cal Newport's [blog](https://calnewport.com/blog/)
